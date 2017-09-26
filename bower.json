@@ -1,0 +1,23 @@
+{
+  "name": "samaritan-brand",
+  "main": "styles/styles.scss",
+  "homepage": "https://github.com/samaritanministries/brand",
+  "authors": [
+    "Jared Rauh <jared.rauh@samaritanministries.org>"
+  ],
+  "description": "Brand elements for Samaritan Ministries",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "dependencies": {
+    "normalize-scss": "3.0.3",
+    "dashing": "1.1.8"
+  }
+}

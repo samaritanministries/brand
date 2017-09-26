@@ -1,0 +1,29 @@
+{
+  "name": "dashing",
+  "version": "1.1.8",
+  "main": "sass/application.scss",
+  "homepage": "http://developers.samaritanministries.org/",
+  "description": "Style framework for Dash",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dashframework/dashing"
+  },
+  "ignore": [
+    "README.md",
+    "example",
+    "guidelines"
+  ],
+  "dependencies": {
+    "normalize-scss": "3.0.3"
+  },
+  "_release": "1.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.8",
+    "commit": "739390097e6771fdad71ba9b12f826d3e97ae875"
+  },
+  "_source": "https://github.com/dashframework/dashing.git",
+  "_target": "1.1.8",
+  "_originalSource": "dashing"
+}

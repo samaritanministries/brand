@@ -1,0 +1,50 @@
+.card--color {
+  display: flex;
+  padding: 0;
+  height: 8rem;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+
+  .color-left, .color-center, .color-right {
+    float: left;
+    height: 100%;
+    padding: 0.5rem;
+  }
+
+  .color-left, .color-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .color-left {
+    background-color: $neutral30;
+    border: 2px solid $neutral30;
+    padding: 0.3rem 0.5rem;
+  }
+  .color-center {
+    border: 2px solid;
+  }
+  .color-right {
+    border: 2px solid;
+    border-radius: 0 10px 10px 0;
+    flex: 2;
+    overflow: hidden;
+  }
+}
+@mixin color-guide($color) {
+  .color-center { background-color: $color; border-color: $color; }
+  .color-right { border-color: $color; }
+}
+
+.color--brand-purple {@include color-guide($brand-purple);}
+.color--brand-light-gray {@include color-guide($brand-light-gray);}
+.color--brand-gray {@include color-guide($brand-gray);}
+.color--brand-black {@include color-guide($brand-black);}
+.color--ui-blue {@include color-guide($ui-blue);}
+.color--ui-green {@include color-guide($ui-green);}
+.color--ui-orange {@include color-guide($ui-orange);}
+.color--ui-red {@include color-guide($ui-red);}
+.color--ui-white {@include color-guide($ui-white); .color-center, .color-right{ border-color: $neutral20;} .color-center { border-right: none;}}
+.color--ui-black {@include color-guide($ui-black);}
