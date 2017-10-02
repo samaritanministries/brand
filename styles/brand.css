@@ -2721,4 +2721,31 @@ label {
 .color--ui-black .color-right {
   border-color: #40464C; }
 
+.grade-container label, .grade-container h2 {
+  margin: 0;
+  text-align: center; }
+
+.card--pass {
+  background-color: #09AA66;
+  border-color: #09AA66;
+  color: #FFFFFF; }
+  .card--pass label, .card--pass h2 {
+    color: #FFFFFF; }
+
+.color-input {
+  position: relative; }
+
+.text-color--container, .background-color--container {
+  border-radius: 3px;
+  display: inline-block;
+  height: 1.65rem;
+  width: 2.5rem;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem; }
+
+.button--copy {
+  padding: 0.2rem 0.5rem !important;
+  margin-top: 0.4rem; }
+
 /*# sourceMappingURL=brand.css.map */

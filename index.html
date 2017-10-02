@@ -5,18 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/brand.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="scripts/contrast-checker.js"></script>
+    <!-- <script src="scripts/contrast-ratio.js"></script> -->
+    <script src="scripts/color.js"></script>
     <title>Color</title>
   </head>
 
   <body style="max-width: 960px; margin: 0 auto; padding: 2rem 1rem;">
-    <section class="page-header">
+    <section class="page-header backgroundColor">
       <div class="row">
         <div class="column column--full">
-          <h1>Color Guidelines</h1>
-          <p>Samaritan UI elements used to display or contain textual content are required to meet <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-levels-head" style="font-weight: 600;" target="_blank">WCAG Contrast Level AA</a> standards. Samaritan Brand and UI Themes have been tested against both Level AA and Level AAA standards.</p>
+          <h1 class="h1Color">Color Guidelines</h1>
+          <p class="pColor">Samaritan UI elements used to display or contain textual content are required to meet <a class="aColor" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-levels-head" style="font-weight: 600;" target="_blank">WCAG Contrast Level AA</a> standards. Samaritan Brand and UI Themes have been tested against both Level AA and Level AAA standards.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column column--full">
+          <h2 class="h2Color">Contrast Checker</h2>
+          <fieldset class="card" style="margin: 1rem 0 0 0;">
+            <div class="row">
+              <div class="column column--fourth color-input" id="textColor">
+                <label>Text Color</label>
+                <input class="text-color--input" type="text" id="foreground" value="#24292C" maxlength="7" onClick="this.select();" onkeyup="changeTextColor(this.className)" />
+                <span class="text-color--container" style="background-color: #24292C"></span>
+              </div>
+              <div class="column column--fourth color-input" id="backgroundColor">
+                <label>Background Color</label>
+                <input class="background-color--input" type="text" id="background" value="#EDEDED" maxlength="7" onClick="this.select();" onkeyup="changeBackgroundColor(this.className)" />
+                <span class="background-color--container" style="background-color: #EDEDED"></span>
+              </div>
+              <fieldset class="column column--fourth">
+                <label style="margin-bottom: 0.6rem;">Compliance</label>
+                <div class="radio--custom inline">
+                  <input type="radio" name="radioContrast" id="radioAa" value="1" checked/>
+                  <label for="radioAa" class="inline">AA</label>
+                </div>
+                <div class="radio--custom inline">
+                  <input type="radio" name="radioContrast" id="radioAaa" value="2" />
+                  <label for="radioAaa" class="inline">AAA</label>
+                </div>
+              </fieldset>
+              <div class="column column--fourth grade-container" id="gradeContainer1">
+                <div class="card" style="margin: 0; padding: 0.5rem;">
+                  <label>Currently Unavailable</label>
+                  <h2 id="contrastGrade">--/8.5</h2>
+                </div>
+              </div>
+              <div class="column column--fourth grade-container" style="display: none;" id="gradeContainer2">
+                <div class="card" style="margin: 0; padding: 0.5rem;">
+                  <label>Currently Unavailable</label>
+                  <h2 id="contrastGrade">--/4.5</h2>
+                </div>
+              </div>
+            </div>
+          </fieldset>
         </div>
       </div>
     </section>
+
     <section>
       <div class="row">
         <div class="column column--full">
@@ -40,10 +88,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="brand-purple" style="display: none;">#9F65AE</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#brand-purple')">COPY</button>
             </div>
           </div>
         </div>
@@ -62,10 +112,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="brand-light-gray" style="display: none;">#EDEDED</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#brand-light-gray')">COPY</button>
             </div>
           </div>
         </div>
@@ -84,10 +136,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="brand-gray" style="display: none;">#D4D4D4</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#brand-gray')">COPY</button>
             </div>
           </div>
         </div>
@@ -106,10 +160,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="brand-black" style="display: none;">#24292C</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#brand-black')">COPY</button>
             </div>
           </div>
         </div>
@@ -139,10 +195,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="ui-blue" style="display: none;">#3F70C9</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#ui-blue')">COPY</button>
             </div>
           </div>
         </div>
@@ -161,10 +219,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="ui-green" style="display: none;">#09AA66</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#ui-green')">COPY</button>
             </div>
           </div>
         </div>
@@ -183,10 +243,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="ui-orange" style="display: none;">#FFA11F</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#ui-orange')">COPY</button>
             </div>
           </div>
         </div>
@@ -205,10 +267,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="ui-red" style="display: none;">#DA3D30</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#ui-red')">COPY</button>
             </div>
           </div>
         </div>
@@ -229,10 +293,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="ui-white" style="display: none;">#FFFFFF</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#ui-white')">COPY</button>
             </div>
           </div>
         </div>
@@ -251,10 +317,12 @@
               <span class="color-black aaa"></span>
             </div>
             <div class="color-right">
-              <label>HEX Code</label>
-              <span class="hex-code"></span>
               <label>Sass Variable</label>
               <span class="sass-variable"></span>
+              <label>HEX Code</label>
+              <span class="hex-code"></span>
+              <span id="ui-black" style="display: none;">#40464C</span>
+              <button class="button button--small button--smooth button--gray button--copy" onclick="copyToClipboard('#ui-black')">COPY</button>
             </div>
           </div>
         </div>

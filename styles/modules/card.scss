@@ -33,6 +33,7 @@
     overflow: hidden;
   }
 }
+
 @mixin color-guide($color) {
   .color-center { background-color: $color; border-color: $color; }
   .color-right { border-color: $color; }
@@ -48,3 +49,29 @@
 .color--ui-red {@include color-guide($ui-red);}
 .color--ui-white {@include color-guide($ui-white); .color-center, .color-right{ border-color: $neutral20;} .color-center { border-right: none;}}
 .color--ui-black {@include color-guide($ui-black);}
+
+.grade-container {
+  label, h2 {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.card--pass {
+  background-color: $ui-green;
+  border-color: $ui-green;
+  color: $white;
+  label, h2 { color: $white; }
+}
+
+.color-input { position: relative; }
+
+.text-color--container, .background-color--container {
+  border-radius: 3px;
+  display: inline-block;
+  height: 1.65rem;
+  width: 2.5rem;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+}
