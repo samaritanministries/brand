@@ -34,6 +34,47 @@
   }
 }
 
+.color-details {
+  border-bottom: 2px solid $brand-light-gray;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  &:last-of-type { border-bottom: none; }
+
+  label { margin-top: 0 !important; }
+  .color-block {
+    border-radius: 5px;
+    height: 2.2rem;
+    width: 4rem;
+    float: left;
+  }
+  .color-detail {
+    margin-left: 1rem;
+    float: left;
+  }
+}
+
+.color--neutral100 .color-block { background-color: $neutral100; }
+.color--neutral90 .color-block { background-color: $neutral90; }
+.color--neutral80 .color-block { background-color: $neutral80; }
+.color--neutral70 .color-block { background-color: $neutral70; }
+.color--neutral60 .color-block { background-color: $neutral60; }
+.color--neutral50 .color-block { background-color: $neutral50; }
+.color--neutral40 .color-block { background-color: $neutral40; }
+.color--neutral30 .color-block { background-color: $neutral30; }
+.color--neutral20 .color-block { background-color: $neutral20; }
+.color--neutral10 .color-block { background-color: $neutral10; }
+
+.color--blue50 .color-block { background-color: $blue50; }
+.color--blue40 .color-block { background-color: $blue40; }
+.color--blue30 .color-block { background-color: $blue30; }
+.color--blue20 .color-block { background-color: $blue20; }
+.color--blue10 .color-block { background-color: $blue10; }
+
+.color--green50 .color-block { background-color: $green50; }
+.color--green40 .color-block { background-color: $green40; }
+.color--green30 .color-block { background-color: $green30; }
+.color--green20 .color-block { background-color: $green20; }
+.color--green10 .color-block { background-color: $green10; }
+
 @mixin color-guide($color) {
   .color-center { background-color: $color; border-color: $color; }
   .color-right { border-color: $color; }
@@ -49,6 +90,17 @@
 .color--ui-red {@include color-guide($ui-red);}
 .color--ui-white {@include color-guide($ui-white); .color-center, .color-right{ border-color: $neutral20;} .color-center { border-right: none;}}
 .color--ui-black {@include color-guide($ui-black);}
+
+.color--neutral100 {@include color-guide($neutral100);}
+.color--neutral90 {@include color-guide($neutral90);}
+.color--neutral80 {@include color-guide($neutral80);}
+.color--neutral70 {@include color-guide($neutral70);}
+.color--neutral60 {@include color-guide($neutral60);}
+.color--neutral50 {@include color-guide($neutral50);}
+.color--neutral40 {@include color-guide($neutral40);}
+.color--neutral30 {@include color-guide($neutral30);}
+.color--neutral20 {@include color-guide($neutral20);}
+.color--neutral10 {@include color-guide($neutral10);}
 
 .grade-container {
   label, h2 {
