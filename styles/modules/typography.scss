@@ -43,6 +43,14 @@ label {
   span.hex-code:after { content: $hex; }
   span.sass-variable:after { content: $sass; }
 }
+.color--samaritan-purple { @include color-label("#AF93C5", "$samaritan-purple"); }
+.color--guidelines-purple { @include color-label("#54377C", "$guidelines-purple"); }
+.color--receiver-orange { @include color-label("#F68B20", "$receiver-orange"); }
+.color--executive-blue { @include color-label("#434E5B", "$executive-blue"); }
+.color--medical-blue { @include color-label("#6BC9D1", "$medical-blue"); }
+.color--medical-green { @include color-label("#2EB9AB", "$medical-green"); }
+.color--sharing-blue { @include color-label("#71B9E0", "$sharing-blue"); }
+.color--barbi-world-pink { @include color-label("#EF557B", "$barbi-world-pink"); }
 
 .color--brand-purple { @include color-label("#9F65AE", "$classic"); }
 .color--brand-light-gray { @include color-label("#EDEDED", "$base"); }

@@ -2,6 +2,22 @@
 @import "card";
 
 .button--copy {
-  padding: 0.2rem 0.5rem !important;
-  margin-top: 0.4rem;
+  position: absolute;
+  margin: 0;
+  left: 2rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 2rem);
+  &:hover { opacity: 1 !important; }
+  &:active { opacity: .6 !important; }
+}
+
+.color--ui-white,
+.color--brand-gray,
+.color--brand-light-gray,
+.color--ui-orange {
+  .button--copy {
+    color: $black !important;
+  }
 }

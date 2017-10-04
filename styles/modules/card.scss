@@ -52,6 +52,24 @@
   }
 }
 
+.card--color {
+  button { display: none; }
+}
+
+.card--color:hover {
+  cursor: pointer;
+
+  .color-center, .color-right, label, span { transition: all 0.3s; }
+
+  .color-center { flex: 2; }
+  .color-right { flex: 0; margin-left: -2rem; border-left: none;}
+  label, span {
+    opacity: 0;
+    transform: translateX(8rem);
+  }
+  button { display: block; }
+}
+
 .color--neutral100 .color-block { background-color: $neutral100; }
 .color--neutral90 .color-block { background-color: $neutral90; }
 .color--neutral80 .color-block { background-color: $neutral80; }
@@ -79,6 +97,15 @@
   .color-center { background-color: $color; border-color: $color; }
   .color-right { border-color: $color; }
 }
+
+.color--samaritan-purple {@include color-guide($samaritan-purple);}
+.color--guidelines-purple {@include color-guide($guidelines-purple);}
+.color--receiver-orange {@include color-guide($receiver-orange);}
+.color--executive-blue {@include color-guide($executive-blue);}
+.color--medical-blue {@include color-guide($medical-blue);}
+.color--medical-green {@include color-guide($medical-green);}
+.color--sharing-blue {@include color-guide($sharing-blue);}
+.color--barbi-world-pink {@include color-guide($barbi-world-pink);}
 
 .color--brand-purple {@include color-guide($brand-purple);}
 .color--brand-light-gray {@include color-guide($brand-light-gray);}

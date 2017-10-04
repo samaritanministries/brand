@@ -2583,6 +2583,46 @@ label {
 .color-right span, .color-details span {
   font-size: .9rem; }
 
+.color--samaritan-purple span.hex-code:after {
+  content: "#AF93C5"; }
+.color--samaritan-purple span.sass-variable:after {
+  content: "$samaritan-purple"; }
+
+.color--guidelines-purple span.hex-code:after {
+  content: "#54377C"; }
+.color--guidelines-purple span.sass-variable:after {
+  content: "$guidelines-purple"; }
+
+.color--receiver-orange span.hex-code:after {
+  content: "#F68B20"; }
+.color--receiver-orange span.sass-variable:after {
+  content: "$receiver-orange"; }
+
+.color--executive-blue span.hex-code:after {
+  content: "#434E5B"; }
+.color--executive-blue span.sass-variable:after {
+  content: "$executive-blue"; }
+
+.color--medical-blue span.hex-code:after {
+  content: "#6BC9D1"; }
+.color--medical-blue span.sass-variable:after {
+  content: "$medical-blue"; }
+
+.color--medical-green span.hex-code:after {
+  content: "#2EB9AB"; }
+.color--medical-green span.sass-variable:after {
+  content: "$medical-green"; }
+
+.color--sharing-blue span.hex-code:after {
+  content: "#71B9E0"; }
+.color--sharing-blue span.sass-variable:after {
+  content: "$sharing-blue"; }
+
+.color--barbi-world-pink span.hex-code:after {
+  content: "#EF557B"; }
+.color--barbi-world-pink span.sass-variable:after {
+  content: "$barbi-world-pink"; }
+
 .color--brand-purple span.hex-code:after {
   content: "#9F65AE"; }
 .color--brand-purple span.sass-variable:after {
@@ -2799,6 +2839,25 @@ label {
     margin-left: 1rem;
     float: left; }
 
+.card--color button {
+  display: none; }
+
+.card--color:hover {
+  cursor: pointer; }
+  .card--color:hover .color-center, .card--color:hover .color-right, .card--color:hover label, .card--color:hover span {
+    transition: all 0.3s; }
+  .card--color:hover .color-center {
+    flex: 2; }
+  .card--color:hover .color-right {
+    flex: 0;
+    margin-left: -2rem;
+    border-left: none; }
+  .card--color:hover label, .card--color:hover span {
+    opacity: 0;
+    transform: translateX(8rem); }
+  .card--color:hover button {
+    display: block; }
+
 .color--neutral100 .color-block {
   background-color: #24292C; }
 
@@ -2858,6 +2917,54 @@ label {
 
 .color--green10 .color-block {
   background-color: #78C696; }
+
+.color--samaritan-purple .color-center {
+  background-color: #AF93C5;
+  border-color: #AF93C5; }
+.color--samaritan-purple .color-right {
+  border-color: #AF93C5; }
+
+.color--guidelines-purple .color-center {
+  background-color: #54377C;
+  border-color: #54377C; }
+.color--guidelines-purple .color-right {
+  border-color: #54377C; }
+
+.color--receiver-orange .color-center {
+  background-color: #F68B20;
+  border-color: #F68B20; }
+.color--receiver-orange .color-right {
+  border-color: #F68B20; }
+
+.color--executive-blue .color-center {
+  background-color: #434E5B;
+  border-color: #434E5B; }
+.color--executive-blue .color-right {
+  border-color: #434E5B; }
+
+.color--medical-blue .color-center {
+  background-color: #6BC9D1;
+  border-color: #6BC9D1; }
+.color--medical-blue .color-right {
+  border-color: #6BC9D1; }
+
+.color--medical-green .color-center {
+  background-color: #2EB9AB;
+  border-color: #2EB9AB; }
+.color--medical-green .color-right {
+  border-color: #2EB9AB; }
+
+.color--sharing-blue .color-center {
+  background-color: #71B9E0;
+  border-color: #71B9E0; }
+.color--sharing-blue .color-right {
+  border-color: #71B9E0; }
+
+.color--barbi-world-pink .color-center {
+  background-color: #EF557B;
+  border-color: #EF557B; }
+.color--barbi-world-pink .color-right {
+  border-color: #EF557B; }
 
 .color--brand-purple .color-center {
   background-color: #9F65AE;
@@ -3007,7 +3114,22 @@ label {
   bottom: 1.5rem; }
 
 .button--copy {
-  padding: 0.2rem 0.5rem !important;
-  margin-top: 0.4rem; }
+  position: absolute;
+  margin: 0;
+  left: 2rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 2rem); }
+  .button--copy:hover {
+    opacity: 1 !important; }
+  .button--copy:active {
+    opacity: .6 !important; }
+
+.color--ui-white .button--copy,
+.color--brand-gray .button--copy,
+.color--brand-light-gray .button--copy,
+.color--ui-orange .button--copy {
+  color: #000000 !important; }
 
 /*# sourceMappingURL=brand.css.map */
